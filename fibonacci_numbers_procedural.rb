@@ -1,6 +1,6 @@
 =begin
 PROBLEM NOTES:
-compute the nth Fibonacci number non-recursivley (proceduraly)
+compute the nth Fibonacci number non-recursively (proceduraly)
 
 F(1) = 1
 F(2) = 1
@@ -9,7 +9,7 @@ F(n) = F(n-1) + F(n-2) where n > 2
 Ex: F(4) = F(3) + F(2) => F(2) + F(1) + 1 => 1 + 1 + 1 => 3
 
 ALGORITHM:
-  given an integer n
+  given integer n
 
   1 initialize two integer variables to 1
       current_fib_number
@@ -61,4 +61,4 @@ p fibonacci(4) == 3
 p fibonacci(5) == 5
 p fibonacci(20) == 6765
 p fibonacci(100) == 354224848179261915075
-fib_ten_thousand_and_one = fibonacci(100_001) # => 4202692702.....8285979669707537501
+p fibonacci(100_001) # => 4202692702.....8285979669707537501
