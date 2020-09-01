@@ -6,7 +6,7 @@
 
 PROBLEM NOTES:
 
-display a diamond made of n rows asterisks
+display a diamond made of n rows of asterisks
 the first and last row contain a single asterisk
 the middle row contains n asterisks
 
@@ -60,53 +60,68 @@ DIAMOND
   use a while loop for each loop
 =end
 
-def star_row(number_of_stars, grid_size)
+def star_row1(number_of_stars, grid_size)
   (' ' * ((grid_size - number_of_stars) / 2)) + ('*' * number_of_stars)
 end
 
-def display_diamond(grid_size)
+def display_diamond1(grid_size)
   stars_per_row = 1
   loop do
-    puts star_row(stars_per_row, grid_size)
+    puts star_row1(stars_per_row, grid_size)
     break if stars_per_row >= grid_size
     stars_per_row += 2
   end
   loop do
     stars_per_row -= 2
     break if stars_per_row < 1
-    puts star_row(stars_per_row, grid_size)
+    puts star_row1(stars_per_row, grid_size)
   end
 end
 
-def star_row(number_of_stars, grid_size)
+def star_row2(number_of_stars, grid_size)
   stars = Array.new(number_of_stars, '*').join
   spaces = Array.new(((grid_size - number_of_stars) / 2), ' ').join
   spaces.concat(stars)
 end
 
-def display_diamond(grid_size)
+def display_diamond2(grid_size)
   stars_per_row = 1
   while stars_per_row < grid_size
-    puts star_row(stars_per_row, grid_size)
+    puts star_row2(stars_per_row, grid_size)
     stars_per_row += 2
   end
   while stars_per_row >= 1
-    puts star_row(stars_per_row, grid_size)
+    puts star_row2(stars_per_row, grid_size)
     stars_per_row -= 2
   end
 end
 
-display_diamond(1)
-display_diamond(3)
-display_diamond(9)
-display_diamond(11)
+display_diamond1(1)
+display_diamond1(3)
+display_diamond1(9)
+display_diamond1(11)
 
-# p star_row(1, 3)
-# p star_row(3, 3)
-# p star_row(1, 3)
+# p star_row1(1, 3)
+# p star_row1(3, 3)
+# p star_row1(1, 3)
 
-# p star_row(1, 9)
-# p star_row(3, 9)
-# p star_row(5, 9)
-# p star_row(7, 9)
-# p star_row(9, 9)
+# p star_row1(1, 9)
+# p star_row1(3, 9)
+# p star_row1(5, 9)
+# p star_row1(7, 9)
+# p star_row1(9, 9)
+
+display_diamond2(1)
+display_diamond2(3)
+display_diamond2(9)
+display_diamond2(11)
+
+# p star_row2(1, 3)
+# p star_row2(3, 3)
+# p star_row2(1, 3)
+
+# p star_row2(1, 9)
+# p star_row2(3, 9)
+# p star_row2(5, 9)
+# p star_row2(7, 9)
+# p star_row2(9, 9)

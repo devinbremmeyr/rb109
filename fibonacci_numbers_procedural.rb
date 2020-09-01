@@ -15,11 +15,11 @@ ALGORITHM:
       current_fib_number
       previous_fib_number
   2 iterate a loop (n - 2) times
-    a  assign the value of current_fib_number to swap_number
+    a assign the value of current_fib_number to swap_number
     b assign current_fib_number the result of previous_fib_number + current_fib_number
     c assign the value of swap_number to previoius_fib_number
   3 return current_fib_number
-  
+
   Example:
   Fib(3) (1, 1) => (2, 1)
   Fib(4) (1, 1) => (2, 1) => (3, 2)
@@ -33,10 +33,10 @@ IMPLEMENTATOIN NOTES #2:
   use a while loop for the loop
 =end
 
-def fibonacci(n)
+def fibonacci1(n)
   current_fib_number = 1
   previous_fib_number = 1
-  3.upto(n) do |i|
+  3.upto(n) do
     swap_number = current_fib_number
     current_fib_number += previous_fib_number
     previous_fib_number = swap_number
@@ -44,7 +44,7 @@ def fibonacci(n)
   current_fib_number
 end
 
-def fibonacci(n)
+def fibonacci2(n)
   fib_numbers = [1, 1]
   fib_index = 2
   while fib_index < n
@@ -54,11 +54,21 @@ def fibonacci(n)
   end
   fib_numbers.last
 end
-p fibonacci(1) == 1
-p fibonacci(2) == 1
-p fibonacci(3) == 2
-p fibonacci(4) == 3
-p fibonacci(5) == 5
-p fibonacci(20) == 6765
-p fibonacci(100) == 354224848179261915075
-p fibonacci(100_001) # => 4202692702.....8285979669707537501
+
+p fibonacci1(1) == 1
+p fibonacci1(2) == 1
+p fibonacci1(3) == 2
+p fibonacci1(4) == 3
+p fibonacci1(5) == 5
+p fibonacci1(20) == 6765
+p fibonacci1(100) == 354224848179261915075
+p fibonacci1(100_001) % 10**19 == 8285979669707537501
+puts ""
+p fibonacci2(1) == 1
+p fibonacci2(2) == 1
+p fibonacci2(3) == 2
+p fibonacci2(4) == 3
+p fibonacci2(5) == 5
+p fibonacci2(20) == 6765
+p fibonacci2(100) == 354224848179261915075
+p fibonacci2(100_001) % 10**19 == 8285979669707537501
